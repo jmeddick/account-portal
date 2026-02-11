@@ -1,5 +1,15 @@
 Terminology:
-
+- **UID**: in Unix, this would be "username", but we use LDAP terminology
+  - by default our UIDs are based on [the EPPN attribute](https://spaces.at.internet2.edu/spaces/federation/pages/181634464/user-attr-eppn)
+- **GID**: in Unix, this would be "group name", but we use LDAP terminology
+  - every user gets their own group with a group name equal to their username
+    - see [User Private Groups](https://wiki.debian.org/UserPrivateGroups)
+- **UID number**: in Unix, this would be "UID", but we use LDAP terminology
+  - all users created by the account portal have equal UID numbers and GID numbers
+  - see `custom_user_mappings`
+- **GID number**: in Unix, this would be "GID", but we use LDAP terminology
+  - all users created by the account portal have equal UID numbers and GID numbers
+  - see `custom_user_mappings`
 - **qualified user**: a user who is currently a PI or a member of at least one PI group
   - your other services should require this group for authorization
 - **unqualified user**: inverse of qualified
