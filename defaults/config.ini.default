@@ -11,8 +11,8 @@ name = "UnityHPC Account Portal"  ; Name of the website
 url = "http://127.0.0.1:8000/"  ; URL of the website
 description = "The UnityHPC Account Portal is an identity management GUI for research computing"  ; Description of the website
 logo = "logo.png"  ; path to logo file, in the webroot/assets/branding folder
-terms_of_service_url = "https://github.com" ; this can be external or a portal page created with "content management"
-account_policy_url = "https://github.com" ; this can be external or a portal page created with "content management"
+terms_of_service_url = "https://github.com" ;
+account_policy_url = "https://github.com" ;
 getting_started_url = "https://github.com" ; documentation about how to get started
 allow_die = true ; internal use only
 enable_verbose_error_log = true ; internal use only
@@ -117,10 +117,6 @@ send_pimesg_to_admins = false
 
 [webhook] ; webhook to send messages to admins
 url = "https://hooks.slack.com/services/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"
-
-[page]  ; which sql objects to use for the content on these pages
-home = "home"
-support = "support"
 
 [expiry]
 idlelock_warning_days[] = 180
