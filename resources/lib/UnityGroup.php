@@ -173,14 +173,6 @@ class UnityGroup extends PosixGroup
         if (!$this->requestExists($user)) {
             return;
         }
-        $this->SQL->removeRequest($user->uid, $this->gid);
-        if ($send_mail) {
-            $this->MAILER->sendMail(
-                $this->getOwnerMailAndPlusAddressedManagerMails(),
-                "group_join_request_cancelled",
-                ["uid" => $user->uid],
-            );
-        }
     }
 
     /**
