@@ -9,6 +9,7 @@ jobs:
   phpstan:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v3
         with:
           submodules: true
@@ -16,5 +17,13 @@ jobs:
         with:
           php-version: "8.3"
           tools: composer
+
+      - name: Cache composer cache
+        uses: actions/cache@v5
+        with:
+          path: ${{ env.COMPOSER_CACHE_DIR }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-compser-
+
       - run: composer install --dev
       - run: ./vendor/bin/phpstan analyse -c phpstan.neon
