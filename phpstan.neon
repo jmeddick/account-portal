@@ -52,9 +52,10 @@ parameters:
     - messages:
         - '#If condition is always false\.#'
       paths:
-        - test/functional/PIBecomeDenyTest.php
+        - test/functional/PIBecomeRequestTest.php
         - test/functional/UserDisableTest.php
         - webroot/panel/pi.php
+        - test/functional/ExpiryTest.php
     # $Subject is written by mail templates
     - messages:
         - '#Property UnityWebPortal\\lib\\UnityWebhook::\$Subject is never written, only read\.#'
@@ -69,6 +70,5 @@ parameters:
     - messages:
         - '#Method UnityWebPortal\\lib\\UnitySQL::setUserLastLogin\(\) is unused.#'
         - '#Method UnityWebPortal\\lib\\UnitySQL::removeUserLastLogin\(\) is unused.#'
-        - '#Method UnityWebPortal\\lib\\UnitySQL::getUserLastLogin\(\) is unused.#'
       paths:
         - 'resources/lib/UnitySQL.php'
