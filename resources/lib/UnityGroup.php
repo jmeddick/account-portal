@@ -50,14 +50,6 @@ class UnityGroup extends PosixGroup
             "email" => $this->getOwner()->getMail(),
         ];
         $this->SQL->addRequest($this->getOwner()->uid, UnitySQL::REQUEST_BECOME_PI);
-        if ($send_mail) {
-            $this->MAILER->sendMail($this->getOwner()->getMail(), "group_request");
-            $this->WEBHOOK->sendWebhook("group_request_admin", $context);
-            if ($send_mail_to_admins) {
-                $this->MAILER->sendMail("admin", "group_request_admin", $context);
-            }
-            $this->MAILER->sendMail("pi_approve", "group_request_admin", $context);
-        }
     }
 
     /**
