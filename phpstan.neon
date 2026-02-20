@@ -72,3 +72,4 @@ parameters:
         - '#Method UnityWebPortal\\lib\\UnitySQL::removeUserLastLogin\(\) is unused.#'
       paths:
         - 'resources/lib/UnitySQL.php'
+  tmpDir: tmp
