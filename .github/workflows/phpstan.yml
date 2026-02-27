@@ -18,12 +18,12 @@ jobs:
           php-version: "8.3"
           tools: composer
 
-      - name: Cache composer
+      - name: Cache vendor
         uses: actions/cache@v5
         with:
-          path: ~/.cache/composer
-          key: ${{ runner.os  }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: ${{ runner.os }}-composer-
+          path: vendor
+          key: ${{ runner.os  }}-vendor-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-vendor-
 
       - run: composer install --dev
       - run: ./vendor/bin/phpstan analyse -c phpstan.neon
