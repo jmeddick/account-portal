@@ -509,7 +509,6 @@ class UnityGroup extends PosixGroup
             array_push($mails, $this->addPlusAddressToMail($manager->getMail()));
         }
         $mails = array_unique($mails);
-        sort($mails);
         return $mails;
     }
 }
